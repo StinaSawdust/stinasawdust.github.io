@@ -1,0 +1,324 @@
+@charset "UTF-8";
+
+
+
+
+    /************/
+   /*          */
+  /*   Base   */
+ /*          */
+/************/
+
+
+html, body {
+
+	width:  100%;
+	height: 100%;
+}
+body {
+
+	margin:  0;
+	background: #000;
+	color: #000;
+	font-family: Arial, sans-serif;
+	font-size:   36px;
+	line-height: 48px;
+	/*
+	-webkit-touch-callout: none;
+	-webkit-user-select:   none;
+	-khtml-user-select:    none;
+	-moz-user-select:      none;
+	-ms-user-select:       none;
+	user-select:           none;*/
+}
+a {
+
+	color: #06C;
+	text-decoration: none;
+}
+a:hover {
+	
+	border-bottom: 1px solid #06C;
+}
+a.button {
+
+	position: relative;
+	display: inline-block;
+	border: none;
+	border-radius: 8px;
+	background-color: #06C;
+	color: #FFF;
+	padding: 20px 25px;
+	text-transform: uppercase;
+	font-weight: bold;
+	overflow: hidden;
+}
+a.button .button-hover {
+
+	position: absolute;
+	top:  0;
+	left: 0;
+	width: 100%;
+	height:  0;
+	border-radius: 8px;
+	background-color: #090;
+	-webkit-transition: height 0.1s linear 0s;
+	transition: height 0.1s linear 0s;
+}
+a.button .button-content {
+
+	position: relative;
+	top:  0;
+	left: 0;
+	width:  100%;
+	height: 100%;
+}
+a.button:hover .button-hover, a.button:active .button-hover {
+
+	height: 100%;
+	-webkit-transition: height 0.1s linear 0s;
+	transition: height 0.1s linear 0s;
+}
+section {
+
+	position: relative;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background-color: #FFF;
+	text-align: center;
+}
+table, tr, td {
+
+	margin: 0;
+	/*border-collapse: collapse;*/
+	padding: 0;
+}
+
+
+
+
+    /*************/
+   /*           */
+  /*   Tiles   */
+ /*           */
+/*************/
+
+
+#tiles {
+
+	height: 360px;
+	background-color: transparent;
+	overflow: hidden;
+}
+#tiles table {
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -360px;
+	width:  720px;
+	height: 360px;
+}
+#tiles tr {
+
+	height: 120px;
+}
+#tiles td {
+
+	position: relative;
+	border: 1px solid #000;
+	perspective: 600px;
+	-webkit-perspective: 600px;
+}
+.card {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:  100%;
+	height: 100%;
+	transition: 1s;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;	
+	perspective-origin: 50% 50%;
+	-webkit-perspective-origin: 50% 50%;
+}
+.card.flip {
+
+	transform: rotateY( 180deg );
+	-webkit-transform: rotateY( 180deg );
+}
+.card .front, .card .back {
+
+	position: absolute;
+	top:  0;
+	left: 0;
+	width:  100%;
+	height: 100%;
+	background-size: 100% 100%;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+.card .front {
+
+	background-color: #080;
+	transform: rotateY( 0deg );
+	-webkit-transform: rotateY( 0deg );
+}
+.card .back {
+
+	background-color: #0B0;
+	transform: rotateY( 180deg );
+	-webkit-transform: rotateY( 180deg );
+}
+.stripe {
+
+	height: 10px;
+	background-color: #000;
+}
+
+
+
+
+    /****************/
+   /*              */
+  /*   Masthead   */
+ /*              */
+/****************/
+
+
+#masthead {
+
+	position: relative;
+	height: 540px;
+	background-image: url( ../media/masthead.png );
+	background-repeat: no-repeat;
+	background-size: 600px 600px;
+	background-position: center center;
+}
+
+
+
+
+    /************/
+   /*          */
+  /*   Cars   */
+ /*          */
+/************/
+
+
+.track {
+
+	position: relative;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 70px;
+	border-bottom: 4px solid #000;
+	overflow: hidden;
+}
+.car {
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 180px;
+	height: 50px;
+	background-image: url( ../media/car-1.png );
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#car-2 {
+
+	background-image: url( ../media/car-2.png );
+}
+#car-3 {
+
+	background-image: url( ../media/car-3.png );
+}
+.wheel {
+
+	position: absolute;	
+	left:   25px;
+	bottom:  0;
+	width:  33px;
+	height: 33px;
+	background-image: url( ../media/wheel.png );
+	background-size: 33px 33px;
+    -webkit-transform-origin: 50% 50%;
+    -o-transform-origin:      50% 50%;
+    transform-origin:         50% 50%;
+}
+.wheel-front {
+
+	left: 135px;
+}
+
+
+
+
+    /************/
+   /*          */
+  /*   RSVP   */
+ /*          */
+/************/
+
+
+#rsvp {
+
+	padding: 60px 0 60px 0;
+	text-transform: uppercase;
+	font-style: italic;
+	font-weight: bold;
+}
+#checkerflags {
+
+	display: inline-block;
+	margin-bottom: 20px;
+	width: 130px;
+	height: 70px;
+}
+#rsvp-buttons {
+
+	margin-top: 10px;
+}
+#rsvp-no {
+
+	background-color: transparent;
+	color: #06C;
+}
+#rsvp-no:hover {
+
+	text-decoration: underline;
+}
+#rsvp-yes {
+
+	display: inline-block;
+}
+
+
+
+
+    /*************/
+   /*           */
+  /*   Pilot   */
+ /*           */
+/*************/
+
+
+#pilot {
+
+	height: 400px;
+	background-image: url( ../media/pilot-small.gif );
+	background-size: cover;
+}
+#checkers {
+
+	background-image: url( ../media/checkers.png );
+	background-size: 20px 20px;
+	background-position: center top;
+	height: 40px;
+}
+
+
+

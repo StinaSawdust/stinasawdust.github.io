@@ -1,0 +1,227 @@
+
+
+html, body {
+	
+	width:  100%;
+	height: 100%;
+}
+body {
+	
+	margin: 0;
+	border: none;
+	background-color: #FFF;
+	padding: 0;
+	vertical-align: top;
+	color: #000;
+	font-family: "Old Standard TT", serif;
+	font-size:   14px;
+	line-height: 20px;
+	opacity: 0;
+}
+
+
+
+
+a {
+
+	border-bottom: 1px solid #CCC;
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+
+	border-bottom-color: #000;
+	background-color: #FE0;
+}
+a:active {
+
+	background-color: #FC0;
+}
+a.stealth {
+
+	border: none;
+}
+a.stealth:hover {
+
+	border: none;
+}
+
+
+
+
+.page {
+
+	margin: 0 auto;
+	padding: 0 24px 0 12px;
+	width: 960px;
+	height: 100%;
+}
+.pad   { padding: 8px; }
+.clear { clear: both;  }
+.soft  { color: rgba( 0, 0, 0, 0.3 ); }
+
+
+
+
+#header {
+
+	position: fixed;
+	top:  0;
+	left: 0;
+	height: 60px;
+	width: 100%;
+	box-shadow: 0px 0px 12px #666;
+	background-color: #FFF;
+	text-align: center;
+	overflow: hidden;
+	text-transform: uppercase;
+}
+#headerBuffer {
+
+	height: 60px;
+}
+h1 {
+
+	margin: 12px 0 0 0;
+	padding: 0;
+	font-weight: 400;
+	font-size: 14px;
+	letter-spacing: 4px;
+	line-height: 20px;
+}
+
+
+
+
+.project {
+
+	border-bottom: 1px solid #DDD;
+	text-align: center;
+	padding-bottom: 96px;
+}
+.project .client, .project .title {
+
+	text-transform: uppercase;	
+}
+.project .client {
+
+	margin-top:  36px;
+	font-size:   24px;
+	line-height: 24px;
+	font-weight: 800;
+}
+.project hr {
+
+	margin: 12px auto;
+	border: none;
+	width: 120px;
+	height: 1px;
+	background-color: #000
+}
+.project .title {
+
+	font-size:   14px;
+	line-height: 24px;
+	font-weight: 400;
+}
+.project .slideshow {
+
+	position: relative;
+	margin: 18px 0;
+	width:  960px;
+	height: 540px;
+	overflow: hidden;
+}
+.project .slideshow .slide {
+
+	position: absolute;
+	top:  0;
+	left: 0;
+	width:  960px;
+	height: 540px;
+	overflow: hidden;
+}
+img.slide {
+
+	cursor: e-resize;
+}
+.project .slideshowControls {
+
+	margin-bottom: 18px;
+	font-size:     24px;
+	line-height:   24px;
+}
+.project .poster {
+
+	margin: 18px 0;
+	width:  960px;
+	height: 540px;
+	overflow: hidden;
+}
+.project .description strong {
+
+	font-weight: 800;
+}
+
+
+
+
+#footer {
+
+	padding: 96px 0 96px 0;
+	text-align: center;
+}
+#footer .client, #footer .title {
+
+	text-transform: uppercase;
+}
+#footer .client {
+	
+	font-size:   24px;
+	line-height: 24px;
+	font-weight: 800;	
+}
+#footer hr {
+
+	margin: 12px auto;
+	border: none;
+	width: 120px;
+	height: 1px;
+	background-color: #000
+}
+#footer .title {
+	
+	font-size:   14px;
+	line-height: 24px;
+	font-weight: 400;	
+}
+.copyrightNotice {
+
+	/*margin: 4px 0;*/
+	font-size:   12px;
+	line-height: 20px;
+	color: #666;
+}
+
+
+
+
+a.icon, a.icon img {
+
+	width:  36px;
+	height: 36px;
+	overflow: hidden;
+}
+a.icon {
+
+	display: inline-block;
+	margin: 0 0 8px 0;
+	border: none;
+}
+a.icon + a.icon {
+
+	margin-left: 4px;
+}
+
+
+

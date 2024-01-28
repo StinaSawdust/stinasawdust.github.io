@@ -1,0 +1,354 @@
+
+
+* {
+
+	box-sizing: border-box;
+	margin:  0;
+	padding: 0;
+}
+html, body {
+
+	width:  100%;
+	height: 100%;
+}
+body {
+	
+	position: relative;
+	background-color: #300;
+	color: #FFF;
+	font-family: 'Eurostile-BoldExtendedTwo', Eurostile, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:   60px;
+	line-height: 60px;
+}
+body.outake-stuff {
+
+	overflow-y: scroll; /* has to be scroll, not auto */
+	-webkit-overflow-scrolling: touch;
+}
+
+
+#scroll-background {
+
+	position:  relative;
+	height:    400vh;
+	background-image: 
+		url( ../media/nebula.png ),
+		url( ../media/star-background.png );
+	background-position: 
+		top,
+		0 50%;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	font-size: 400vh; /*  Sets 1em = to this font size  */
+	line-height: 400vh;
+	overflow:  hidden;
+}
+#scroll-foreground {
+
+	position: fixed;
+	top:  0;
+	left: 0;
+	width:    100vw;
+	height:   100vh;
+	overflow: hidden;
+	/*-webkit-overflow-scrolling: touch;*/
+}
+#data {
+
+	display: none;
+	position: fixed;
+	top:  0;
+	left: 0;
+	color: #FFF;
+	font-family: 'Courier New', monospace;
+	font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Parallax base styles
+--------------------------------------------- */
+
+.parallax {
+	
+	height: 500px;/*  Fallback for older browsers.  */
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-perspective: 300px;
+	        perspective: 300px;
+
+	/*overflow-y: scroll;/*  Has to be scroll (not auto) for “scrolling: touch” to work.  */
+	/*-webkit-overflow-scrolling: touch;*/
+}
+.parallax-group {
+	
+	position: relative;
+	height: 500px; /*  Fallback for older browsers.  */
+	height: 100vh;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+}
+.parallax-layer {
+	
+	position: absolute;
+	top:    0;
+	left:   0;
+	right:  0;
+	bottom: 0;
+}
+.parallax-layer-deep {
+
+	-webkit-transform: translateZ( -600px ) scale( 3 );
+	        transform: translateZ( -600px ) scale( 3 );
+	z-index: 20;
+}
+.parallax-layer-back {
+
+	-webkit-transform: translateZ( -300px ) scale( 2 );
+	        transform: translateZ( -300px ) scale( 2 );
+	z-index: 21;
+}
+.parallax-layer-base {
+	
+	-webkit-transform: translateZ( 0 );
+	        transform: translateZ( 0 );
+	z-index: 22;
+}
+.parallax-layer-fore {
+	
+	-webkit-transform: translateZ( 90px ) scale( .7 );
+	        transform: translateZ( 90px ) scale( .7 );
+	z-index: 23;
+}
+.parallax-layer-fore2 {
+	
+	-webkit-transform: translateZ( 150px ) scale( .5 );
+	        transform: translateZ( 150px ) scale( .5 );
+	z-index: 24;
+}
+
+
+
+
+/* Debugger styles - used to show the effect
+--------------------------------------------- */
+
+.debug {
+	
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: .5em;
+	border-radius: 0 0 5px 5px;
+	background: rgba(0,0,0,.85);
+	padding: .5em;
+	color: #fff;
+}
+.debug-on .parallax-group {
+	
+	-webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
+	transform: translate3d(700px, 0, -800px) rotateY(30deg);
+}
+.debug-on .parallax-layer {
+	
+	box-shadow: 0 0 0 2px #000;
+	opacity: 0.9;
+}
+.parallax-group {
+	
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+
+
+
+/* demo styles
+--------------------------------------------- */
+
+body, html {
+	
+	overflow: hidden;
+}
+.parallax {
+	
+	text-transform: uppercase;
+	text-shadow: 0 0 20px rgba( 0, 0, 0, 0.5 );
+}
+.text {
+
+	position: absolute;
+	left: 50%;
+	top:  50%;
+	width:  100%;
+	text-align: center;
+	-webkit-transform: translate( -50%, -50% );
+	        transform: translate( -50%, -50% );
+}
+#pager {
+
+	margin: 0 auto;
+	max-width: 960px;
+	border-bottom: 12px solid rgba( 0, 0, 0, 0.3 );
+	background-color: #000;
+	box-shadow: 0 0 20px rgba( 0, 0, 0, 0.5 );
+}
+
+
+
+
+
+
+
+#countdown-2 .parallax-layer-deep {
+	
+	background-image: url( ../media/nebula-2.png );
+	background-size: cover;
+	background-position: bottom;
+}
+#pilot, #celebrate, #saturday {
+
+	width: 720px;
+	-webkit-filter: drop-shadow( 0 0 10px rgba( 0, 0, 0, 0.8 ));
+            filter: drop-shadow( 0 0 10px rgba( 0, 0, 0, 0.8 ));
+}
+#down-arrow {
+
+	font-weight: bold;
+}
+.blink {
+
+	-webkit-animation: twinkle 2.0s ease-in-out 0s infinite normal;
+	   -moz-animation: twinkle 2.0s ease-in-out 0s infinite normal;
+	    -ms-animation: twinkle 2.0s ease-in-out 0s infinite normal;
+	     -o-animation: twinkle 2.0s ease-in-out 0s infinite normal;
+	        animation: twinkle 2.0s ease-in-out 0s infinite normal;
+}
+@-webkit-keyframes twinkle {
+
+	  0% { opacity: 0.0; }
+	 50% { opacity: 1.0; }
+	100% { opacity: 0.0; }
+}
+
+
+
+
+#countdown-1 .parallax-layer-back {
+	
+	background-image: url( ../media/starfield-3.png );
+}
+#voyager {
+
+	position: absolute;
+	width:  125px;
+	height: 118px;
+	left:    50%;
+	top:     50%;
+	-webkit-transform: translate( -180%, -420% );
+	        transform: translate( -180%, -420% );
+}
+#moon {
+
+	position: absolute;
+	width:  200px;
+	height: 200px;
+	left:    50%;
+	top:     50%;
+	-webkit-transform: translate( -270%, -40% );
+	        transform: translate( -270%, -40% );
+}
+#shuttle {
+
+	position: absolute;
+	width:  312px;
+	height: 600px;
+	left:    50%;
+	top:     50%;
+	-webkit-transform: translate( -10%, 10% );
+	        transform: translate( -10%, 10% );
+}
+
+
+
+
+#countdown-0 .parallax-layer-base {
+	
+	background-image: url( ../media/starfield-3.png );
+	background-size: cover;
+}
+#countdown-0 .parallax-layer-fore {
+
+	background-image: url( ../media/earth.png );
+	background-position: center bottom;
+	background-repeat: no-repeat;
+}
+#countdown-0 .parallax-layer-fore2 {
+
+	vertical-align: center;
+}
+#saturday {
+
+	margin-bottom: 20px;
+}
+.simpler {
+
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:    60px;
+	line-height:  60px;
+	text-transform: none;
+}
+
+
+
+
+.twinkle1 {
+
+	-webkit-animation: twinkle 3.7s linear 0s infinite normal;
+	   -moz-animation: twinkle 3.7s linear 0s infinite normal;
+	    -ms-animation: twinkle 3.7s linear 0s infinite normal;
+	     -o-animation: twinkle 3.7s linear 0s infinite normal;
+	        animation: twinkle 3.7s linear 0s infinite normal;
+}
+.twinkle2 {
+
+	-webkit-animation: twinkle 4.0s linear 0s infinite normal;
+	   -moz-animation: twinkle 4.0s linear 0s infinite normal;
+	    -ms-animation: twinkle 4.0s linear 0s infinite normal;
+	     -o-animation: twinkle 4.0s linear 0s infinite normal;
+	        animation: twinkle 4.0s linear 0s infinite normal;
+}
+@-webkit-keyframes twinkle {
+
+	  0% { opacity: 1.0; }
+	 50% { opacity: 0.3; }
+	100% { opacity: 1.0; }
+}
+@-moz-keyframes twinkle {
+
+	  0% { opacity: 1.0; }
+	 50% { opacity: 0.3; }
+	100% { opacity: 1.0; }
+}
+keyframes twinkle {
+
+	  0% { opacity: 1.0; transform: rotate(0deg); }
+	 50% { opacity: 0.3; transform: rotate(180deg); }
+	100% { opacity: 1.0; transform: rotate(360deg); }
+}
+
+
+
