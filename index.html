@@ -6,9 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="styles/base.css">
 		<link rel="icon" type="image/png" href="media/stinasmith-favicon-0064x0064.png?3">
 		<link rel="apple-touch-icon" href="media/stinasmith-favicon-0144x0144.png">
-		<script src="scripts/jquery-1.8.3.min.js"></script>
-		<script src="scripts/jquery-ui-1.9.2.custom.min.js"></script>
-		<script src="scripts/skip-3.673.js"></script>
 		<title>Stina Sawdust</title>
 		<meta name="description" content="Stina Sawdust is an art directer and designer based in Brooklyn, New York." />
 		<meta name="keywords" content="Stina Sawdust, London, New York, art director, graphic design, motion graphics, Yale, Trollback, HarrimanSteel">
@@ -31,6 +28,14 @@
 				</div>
 			
 		</div>
-		<script src="scripts/application.js"></script>
+		<script>
+			(function(){
+				var b = document.body;
+				// Ensure a smooth fade-in lasting 1000ms (same as SECOND used previously)
+				b.style.transition = 'opacity 1s ease-in-out';
+				// Trigger the transition on the next frame
+				requestAnimationFrame(function(){ b.style.opacity = '1'; });
+			})();
+		</script>
 	</body>
 </html>
