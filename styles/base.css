@@ -17,6 +17,9 @@ body {
 	font-size:   14px;
 	line-height: 20px;
 	opacity: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 
@@ -53,8 +56,8 @@ a.stealth:hover {
 
 	margin: 0 auto;
 	padding: 0 24px 0 12px;
-	width: 960px;
-	height: 100%;
+	width: 500px;
+	height: auto;
 }
 .pad   { padding: 8px; }
 .clear { clear: both;  }
